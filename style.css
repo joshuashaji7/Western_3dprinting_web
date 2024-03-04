@@ -1,0 +1,726 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+  /*background-image: url(images/hero-printer2.png);*/
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  padding: 10px 10%;
+  background-color: rgb(34, 31, 31);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #8a2be2;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  transition: background 0.75s;
+}
+
+nav ul li a:hover {
+  background-color: #ff004f;
+  border-radius: 5px;
+}
+.row {
+  /*background-color: #0d10e2;*/
+  display: flex;
+  flex-direction: row;
+}
+.header-text {
+  margin-top: 20%;
+  /* flex-basis: 35%;*/
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  /*background-color: #11c54a*/
+}
+
+.header-text h1 {
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+.header-text h1 span {
+  color: #8a2be2;
+}
+
+/*-----------------------------------------------------------------*/
+/* Slide Show */
+
+.slide-show {
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-show .slide-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 1) - 12px);
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.slide-carousel.dragging .slide-card {
+  cursor: grab;
+  user-select: none;
+}
+
+.slide-carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.slide-carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.slide-carousel :where(.slide-card, .slide-image) {
+  display: flex; /* The bottom two commands wont work if display flex is not used */
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-carousel .slide-card {
+  scroll-snap-align: start;
+  list-style: none;
+  flex-direction: column;
+  height: 700px;
+  width: 700px;
+}
+
+.slide-card .slide-image {
+  background: linear-gradient(black, purple, white);
+  height: 650px;
+  width: 650px;
+}
+.slide-card .slide-image img {
+  height: 600px;
+  width: 600px;
+  object-fit: cover;
+}
+
+/*-----------------------------------------------------------------*/
+/* About */
+
+#about {
+  padding: 50px 0;
+  /*background-color: aliceblue*/
+}
+
+.about-col-1 {
+  flex-basis: 50%; /*width of column will  35%*/
+}
+
+.about-col-1 img {
+  height: 90%;
+  width: 90%;
+  border-radius: 15px;
+}
+
+.about-col-2 {
+  flex-basis: 48%;
+}
+.about-col-2 p {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.4;
+}
+
+.about-col-2 .potential span {
+  color: #8a2be2;
+  line-height: 1.7;
+}
+
+.about-col-2 ul {
+  text-indent: 50px;
+
+  line-height: 1.5;
+}
+.about-col-2 ul li {
+  text-indent: 5px;
+  list-style: disc;
+  list-style-position: inside;
+  font-size: 20px;
+
+  line-height: 1.5;
+}
+
+.sub-title span {
+  color: #8a2be2;
+}
+.about-col-2 p span {
+  color: #8a2be2;
+  font-weight: 600;
+}
+
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+  /*background-color: aqua*/
+  line-height: 2.5;
+  text-align: center;
+}
+
+/* Tab */
+
+.tab-titles {
+  display: flex; /* Align them horizontall*/
+  margin: 20px 0 40px;
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links.active-link {
+  background-color: #ff004f;
+  border-radius: 7px;
+}
+.tab-links:hover {
+  background-color: #ff004f;
+  border-radius: 7px;
+  transition: 0.75s;
+}
+
+.tab-contents ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tab-contents ul li span {
+  color: #ff004f;
+  font-size: 14px;
+}
+
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Team */
+
+#cont {
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+}
+.wrapper {
+  width: 100%;
+  height: 342px;
+  max-width: 1530px;
+  position: relative;
+}
+.wrapper i {
+  height: 50px;
+  width: 50px;
+  background-color: #8a2be2;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.wrapper i:first-child {
+  left: -22px;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+
+.wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel :where(.card, .image) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+  background: grey;
+  height: 342px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.card .image {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background-color: rgb(137, 71, 71);
+}
+.card .image img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card h2 {
+  font-size: 1.56rem;
+  font-weight: 500;
+  margin: 30px 0 5px;
+}
+
+.card span {
+  color: #8a2be2;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 1) - 0px);
+  }
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Printers */
+
+#printers {
+  padding: 50px 0px;
+  /*background-color: #61b752*/
+}
+
+.printer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+}
+
+.printer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.printer img {
+  width: 100%;
+  display: block;
+  transition: 0.5s;
+}
+
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  border-radius: 10px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: 00.5s;
+}
+
+.printer:hover img {
+  transform: scale(1.1);
+}
+
+.printer:hover .layer {
+  height: 100%;
+}
+
+/*-----------------------------------------------------------------*/
+
+/* CONTACT US SECTION */
+.contact {
+  padding-bottom: 15%;
+  /*background-color: yellow*/
+}
+
+/* Social Icons START*/
+.social-icons {
+  font-size: 50px;
+  padding: 0px 0px;
+  text-align: center;
+}
+
+.social-icons :hover {
+  color: #ff004f;
+}
+/* Social Icons END*/
+
+.contact-left {
+  background-color: antiquewhite;
+}
+/* become a member button START*/
+.membership {
+  text-align: center;
+  padding-top: 20px;
+}
+.member-btn {
+  display: inline-block;
+  font-size: 15px;
+  width: fit-content;
+  border: 1px solid #8a2be2;
+  border-radius: 10px;
+  padding: 10px;
+  color: azure;
+  text-decoration: none;
+  transition: background 0.5s;
+}
+
+.member-btn:hover {
+  background: purple;
+}
+/* become a member button END*/
+
+.contact-right {
+  flex-basis: 40%;
+}
+.contact-middle {
+  flex-basis: 40%;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.contact-left {
+  flex-basis: 20%;
+}
+
+/* Messages START */
+
+.contact-right {
+  background-color: #8a2be2;
+}
+
+.member-btn.sub-btn {
+  padding: 15px 60px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form textarea,
+form input {
+  border: 0;
+  width: 100%;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 10px 0px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+#msg {
+  color: #61b752;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Messages END */
+nav .fa-solid {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  /* Removing the about section image*/
+  .about-col-1 {
+    flex-basis: 0%; /*width of column will  35%*/
+  }
+
+  .about-col-1 img {
+    display: none;
+  }
+}
+/*-------------css for smaller screens------ */
+@media only screen and (max-width: 600px) {
+  /*---menu----*/
+  nav .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+
+  nav ul {
+    background: #8a2be2;
+    position: fixed;
+    top: 0;
+    right: -200vh;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  /*---- slide-show -----*/
+  .slide-show {
+    width: 250px;
+    height: 250px;
+    background: #590606;
+  }
+
+  .slide-show .slide-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 1) - 12px);
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .slide-carousel.dragging .slide-card {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .slide-carousel.no-transition {
+    scroll-behavior: auto;
+  }
+
+  .slide-carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .slide-carousel :where(.slide-card, .slide-image) {
+    display: flex; /* The bottom two commands wont work if display flex is not used */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-carousel .slide-card {
+    scroll-snap-align: start;
+    list-style: none;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .slide-card .slide-image {
+    background: linear-gradient(black, purple, white);
+    height: 100%;
+    width: 100%;
+  }
+  .slide-card .slide-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /*-----------------------------------------------------------------*/
+  /* About */
+
+  .about-col-1 {
+    flex-basis: 25%; /*width of column will  35%*/
+  }
+
+  .about-col-1 img {
+    height: 90%;
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  .about-col-2 {
+    flex-basis: 48%;
+  }
+  .about-col-2 p {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.4;
+  }
+
+  .about-col-2 .potential span {
+    color: #8a2be2;
+    line-height: 1.7;
+  }
+
+  .about-col-2 ul {
+    text-indent: 50px;
+
+    line-height: 1.5;
+  }
+  .about-col-2 ul li {
+    text-indent: 5px;
+    list-style: disc;
+    list-style-position: inside;
+    font-size: 20px;
+
+    line-height: 1.5;
+  }
+
+  .sub-title span {
+    color: #8a2be2;
+  }
+  .about-col-2 p span {
+    color: #8a2be2;
+    font-weight: 600;
+  }
+
+  .sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    background-color: aqua;
+    line-height: 2.5;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  /*---- slide-show -----*/
+  /*---- slide-show -----*/
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .slide-show {
+    max-width: 300px;
+    background-color: #262626;
+  }
+
+  .slide-show .slide-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 1) - 12px);
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .slide-carousel.dragging .slide-card {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .slide-carousel.no-transition {
+    scroll-behavior: auto;
+  }
+
+  .slide-carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .slide-carousel :where(.slide-card, .slide-image) {
+    display: flex; /* The bottom two commands wont work if display flex is not used */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-carousel .slide-card {
+    scroll-snap-align: start;
+    list-style: none;
+    flex-direction: column;
+    height: 250px;
+    width: 250px;
+  }
+
+  .slide-card .slide-image {
+    background: linear-gradient(black, purple, white);
+    height: 250px;
+    width: 250px;
+  }
+  .slide-card .slide-image img {
+    height: 225px;
+    width: 225px;
+    object-fit: cover;
+  }
+}
